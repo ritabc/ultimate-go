@@ -1,0 +1,1 @@
+* 3.3 Part 2. Minute 8: Does the compiler not know about the heap? 
