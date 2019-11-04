@@ -35,7 +35,7 @@ const tf float64 = 3.14 // type: float64
 ```go 
 var answer = 3 * 0.333
 ```
-- KindFloat(3) * KindFloat(0.333) 
+- KindInt(3) * KindFloat(0.333) 
 - These are constants of a kind 
 - kind Int will be 'promoted up' to be kind Float
 
