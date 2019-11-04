@@ -39,3 +39,5 @@
     - append not being used properly, as in data = append(bill, newItem) (We could be holding reference to old backing arrays and not replacing them)
     - Closing APIs
 * Append behaves differently based on whether len == capacity of the slice it's appending to
+* Mutexes are expensive: Only put simple, atomic code in them
+* fmt.Print is blocking call: 2 simple goroutines that r/m/w to global value will perform as expected, but if you do fmt call in there, there will be context switching while a goroutine waits for fmt, and they will not r/m/w to the variable as expected
