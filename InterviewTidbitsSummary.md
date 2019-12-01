@@ -41,3 +41,11 @@
 * Append behaves differently based on whether len == capacity of the slice it's appending to
 * Mutexes are expensive: Only put simple, atomic code in them
 * fmt.Print is blocking call: 2 simple goroutines that r/m/w to global value will perform as expected, but if you do fmt call in there, there will be context switching while a goroutine waits for fmt, and they will not r/m/w to the variable as expected
+## Goroutines
+* In unbuffered channel: receive happens first
+    - There will be a guarantee that data is being transferred
+    - receive says: 'I'm ready!'
+    - send sends
+* In buffered channel: send happens first
+    - up to n sender can put their results in the channel
+    - receiver can start receiving at some point during the above, or after all 
